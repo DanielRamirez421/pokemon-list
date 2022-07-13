@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "pokemon-app",
+    "slug": "pokemon-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "pokemon-app"
+}
