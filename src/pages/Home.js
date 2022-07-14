@@ -32,6 +32,6 @@ const homeStyles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
     paddingVertical: 40,
-    backgroundColor: '#e6e6e6',
+    backgroundColor: 'rgba(97, 179, 255, 0.1)',
   }
 });

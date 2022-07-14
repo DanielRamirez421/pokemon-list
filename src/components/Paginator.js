@@ -16,13 +16,13 @@ export const Paginator = ({ setSearchParam, page }) => {
         title="◀ Previous" 
         onPress={handlerPreviuous}
         disabled={page === 1}
-        color="#ff1c1c"
+        color="#3986CE"
       />
       <Text style={paginatorStyles.text}>{ page }</Text>
       <Button 
         title="    Next ▶     "
         onPress={handlerNext}
-        color="#ff1c1c"
+        color="#3986CE"
       />
     </View>
   )
@@ -37,9 +37,10 @@ const paginatorStyles = StyleSheet.create({
   },
   text: {
     backgroundColor: '#fff',
-    padding: 10,
-    marginHorizontal: 10,
     borderRadius: 5,
     fontSize: 17,
+    marginHorizontal: 10,
+    paddingHorizontal: 10,
+    textAlignVertical: 'center',
   }
 });
