@@ -45,10 +45,10 @@ export const SearchBar = ({setSearchParam, name}) => {
 
 const searchBarStyle = StyleSheet.create({
   areaView: {
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "row",
     alignItems: "center",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
     marginHorizontal: 7,
   },
   input: {
@@ -59,20 +59,20 @@ const searchBarStyle = StyleSheet.create({
     flex: 1,
     fontSize: 20,
     height: 40,
-    paddingHorizontal: 10,
     marginVertical: 10,
+    paddingHorizontal: 10,
   },
   pressable: {
+    alignItems: "center",
     backgroundColor: '#fff',
     borderRadius: 5,
     height: 40,
-    width: 40,
-    marginLeft: 5,
     justifyContent: "center",
-    alignItems: "center",
+    marginLeft: 5,
+    width: 40,
   },
   pressableImg: {
-    width: 24,
     height: 24,
+    width: 24,
   }
 });

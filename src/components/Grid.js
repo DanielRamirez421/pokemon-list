@@ -88,28 +88,28 @@ const gridStyles = StyleSheet.create({
 
 const modalStyles = StyleSheet.create({
   centeredView: {
-    flex: 1,
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.3)",
+    flex: 1,
+    justifyContent: "center",
   },
   modalView: {
-    margin: 20,
+    alignItems: "center",
     backgroundColor: "#fff",
     borderRadius: 5,
-    paddingVertical: 20,
+    elevation: 5,
+    margin: 20,
     paddingHorizontal: 40,
-    alignItems: "center",
+    paddingVertical: 20,
     shadowColor: "#000",
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5
   },
   button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
     backgroundColor: "#2196F3",
+    borderRadius: 20,
+    elevation: 2,
+    padding: 10,
   },
   textStyle: {
     color: "white",
