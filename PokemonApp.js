@@ -10,7 +10,7 @@ export default function PokemonApp() {
       <ScrollView>
         <View>
           <Home/>
-          <StatusBar style="auto" />
+          {/* <StatusBar style="auto" /> */}
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -24,8 +24,8 @@ export const GridItem = ({ name, url }) => {
   return (
     <View style={gridItemStyles.card}>
       <Image style={gridItemStyles.image} source={{uri: pokemon.img}}/>
-      <Text  style={gridItemStyles.textTitle}>{capitalize(pokemon.name)}</Text>
       <Text  style={gridItemStyles.text}>{'#' + pokemon.id}</Text>
+      <Text  style={gridItemStyles.textTitle}>{capitalize(pokemon.name)}</Text>
     </View>
   );
 };

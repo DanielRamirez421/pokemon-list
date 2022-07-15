@@ -16,7 +16,17 @@ export const fetchPokemons = async (name, page) => {
     baseURL = `${baseURL}?limit=${limit}&offset=${offset}`;
 
     const response = await axios.get(baseURL);
-    return name ? response.data : response.data.results;
+
+    if (!name) {
+      return response.data.results;
+    }
+
+    return [{
+      name: name,
+      url: `${baseURL}/${name.trim().toLocaleLowerCase()}`,
+    }]
+
+    // return !name ? response.data.results : response.data ;
 
   } catch (error) {
 

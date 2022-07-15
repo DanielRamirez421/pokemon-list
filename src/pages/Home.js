@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Dimensions } from "react-native";
 import { Grid } from "../components/Grid";
 import { Paginator } from "../components/Paginator";
 import { SearchBar } from "../components/SearchBar";
@@ -12,18 +12,19 @@ export const Home = () => {
 
   const { pokemons } = useFetchPokemons(name, page);
 
+
   return (
     <View style={homeStyles.container}>
       
       <TitleApp />
 
-      <SearchBar/>
+      <SearchBar setSearchParam={setSearchParam} name={name}/>
 
 
       <Grid pokemons={pokemons}/>
 
 
-      <Paginator setSearchParam={setSearchParam} page={page}/>
+      <Paginator setSearchParam={setSearchParam} page={page} name={name}/>
     </View>
   )
 }
@@ -32,6 +33,7 @@ const homeStyles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
     paddingVertical: 40,
-    backgroundColor: 'rgba(97, 179, 255, 0.1)',
+    backgroundColor: 'rgba(97, 179, 255, 0.25)',
+    minHeight: Dimensions.get("window").height,
   }
 });

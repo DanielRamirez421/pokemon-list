@@ -1,6 +1,6 @@
 import { StyleSheet, Button, Text, View } from "react-native";
 
-export const Paginator = ({ setSearchParam, page }) => {
+export const Paginator = ({ setSearchParam, page, name }) => {
 
   const handlerPreviuous = () => {
     setSearchParam(({ page }) => ({ name: '', page: page - 1 }));
@@ -11,6 +11,9 @@ export const Paginator = ({ setSearchParam, page }) => {
   }
 
   return (
+
+    name ? 
+    null :
     <View style={paginatorStyles.container}>
       <Button 
         title="◀ Previous" 
