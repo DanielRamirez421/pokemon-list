@@ -34,6 +34,6 @@ const homeStyles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 40,
     backgroundColor: 'rgba(97, 179, 255, 0.25)',
-    minHeight: Dimensions.get("window").height,
+    minHeight: Dimensions.get("window").height + 100,
   }
 });

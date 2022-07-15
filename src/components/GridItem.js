@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 
 import { fetchPokemon } from "../helpers/fetchPokemon";
 import { capitalize } from "../utils/utils";
 
-export const GridItem = ({ name, url }) => {
+export const GridItem = ({ name, url, setSelectedPokemon, setModalVisible }) => {
   const [pokemon, setPokemon] = useState({
     name: "",
     img: "https://www.kananss.com/wp-content/uploads/2021/06/51-519068_loader-loading-progress-wait-icon-loading-icon-png-2.png",
@@ -21,12 +21,19 @@ export const GridItem = ({ name, url }) => {
     }
   }, [name, url]);
 
+  const pokemonPressed = () => {
+    setSelectedPokemon(pokemon);
+    setModalVisible(true);
+  }
+
   return (
-    <View style={gridItemStyles.card}>
-      <Image style={gridItemStyles.image} source={{uri: pokemon.img}}/>
-      <Text  style={gridItemStyles.text}>{'#' + pokemon.id}</Text>
-      <Text  style={gridItemStyles.textTitle}>{capitalize(pokemon.name)}</Text>
-    </View>
+    <Pressable onPress={pokemonPressed}>
+      <View style={gridItemStyles.card}>
+        <Image style={gridItemStyles.image} source={{uri: pokemon.img}}/>
+        <Text  style={gridItemStyles.text}>{'#' + pokemon.id}</Text>
+        <Text  style={gridItemStyles.textTitle}>{capitalize(pokemon.name)}</Text>
+      </View>
+    </Pressable>
   );
 };
 
