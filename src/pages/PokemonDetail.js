@@ -71,6 +71,7 @@ const pokemonDetailStyles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: "space-evenly",
   },
   types: {
     display: "flex",

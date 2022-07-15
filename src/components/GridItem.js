@@ -27,8 +27,8 @@ export const GridItem = ({ name, url, setSelectedPokemon, setModalVisible }) => 
   }
 
   return (
-    <Pressable onPress={pokemonPressed}>
-      <View style={gridItemStyles.card}>
+    <Pressable onPress={pokemonPressed} style={gridItemStyles.card}>
+      <View>
         <Image style={gridItemStyles.image} source={{uri: pokemon.img}}/>
         <Text  style={gridItemStyles.text}>{'#' + pokemon.id}</Text>
         <Text  style={gridItemStyles.textTitle}>{capitalize(pokemon.name)}</Text>
@@ -57,10 +57,12 @@ const gridItemStyles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
+    alignSelf: "center"
   },
   textTitle: {
     fontWeight: "bold",
     fontStyle: 'italic',
     fontSize: 25,
+    alignSelf: "center"
   }
 });
