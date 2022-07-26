@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import { useFetchPokemon } from "../hooks/useFetchPokemon";
 
-import { fetchPokemon } from "../helpers/fetchPokemon";
 import { capitalize } from "../utils/utils";
 
 export const GridItem = ({ name, url, setSelectedPokemon, setModalVisible }) => {
-  const [pokemon, setPokemon] = useState({
-    name: "",
-    img: "https://www.kananss.com/wp-content/uploads/2021/06/51-519068_loader-loading-progress-wait-icon-loading-icon-png-2.png",
-    id: "",
-    type: [],
-    weight: "",
-    sprites: {},
-    movements: [],
-  });
-
-  useEffect(() => {
-    if (name && url) {
-      fetchPokemon(url, name).then((data) => setPokemon(data));
-    }
-  }, [name, url]);
+  
+  const { pokemon } = useFetchPokemon(name, url);
 
   const pokemonPressed = () => {
     setSelectedPokemon(pokemon);
