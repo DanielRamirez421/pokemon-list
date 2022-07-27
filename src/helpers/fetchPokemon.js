@@ -1,4 +1,5 @@
 import axios from "axios";
+import { initialPokemonState } from "../utils/utils";
 
 export const fetchPokemon = async (url, name) => {
 
@@ -19,7 +20,7 @@ export const fetchPokemon = async (url, name) => {
 
   } catch (error) {
 
-    alert(error);
+    return initialPokemonState;
     
   }
 

@@ -12,7 +12,13 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testEnvironment": "node",
+    "globals": {
+      "ts-jest": {
+        "isolatedModules": true
+      }
+    }
   },
   "dependencies": {
     "@types/jest": "^28.1.6",

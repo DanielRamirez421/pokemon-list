@@ -1,20 +1,13 @@
 import { useState } from "react";
 import { StyleSheet, View, Text, Image, Modal, ScrollView } from "react-native"
 import { PokemonDetail } from "../pages/PokemonDetail";
+import { initialPokemonState } from "../utils/utils";
 import { GridItem } from "./GridItem";
 
 export const Grid = ({ pokemons }) => {
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedPokemon, setSelectedPokemon] = useState({
-    name: "",
-    img: "https://www.kananss.com/wp-content/uploads/2021/06/51-519068_loader-loading-progress-wait-icon-loading-icon-png-2.png",
-    id: "",
-    type: [],
-    weight: "",
-    sprites: {},
-    movements: [],
-  });
+  const [selectedPokemon, setSelectedPokemon] = useState(initialPokemonState);
 
   return (
     <View style={gridStyles.container}>

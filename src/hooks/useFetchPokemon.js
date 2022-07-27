@@ -1,26 +1,17 @@
 import { useEffect, useState } from "react";
+import { initialPokemonState } from "../utils/utils";
 import { fetchPokemon } from "../helpers/fetchPokemon";
 
+export const useFetchPokemon = (name, url) => {
 
-export const useFetchPokemon = ( name, url ) => {
-  
-  const [pokemon, setPokemon] = useState({
-    name: "",
-    img: "https://www.kananss.com/wp-content/uploads/2021/06/51-519068_loader-loading-progress-wait-icon-loading-icon-png-2.png",
-    id: "",
-    type: [],
-    weight: "",
-    sprites: {},
-    movements: [],
-  });
+  const [pokemon, setPokemon] = useState(initialPokemonState);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (name && url) {
-      fetchPokemon(url, name).then((data) => setPokemon(data));
+      const pokemon = await fetchPokemon(url, name);
+      setPokemon(pokemon);
     }
   }, [name, url]);
 
-  return {
-    pokemon
-  };
-}
+  return { pokemon };
+};

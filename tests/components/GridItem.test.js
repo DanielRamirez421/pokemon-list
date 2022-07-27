@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from "@testing-library/react-native";
-import { Pressable } from "react-native";
 import { GridItem } from "../../src/components/GridItem";
 import { useFetchPokemon } from "../../src/hooks/useFetchPokemon";
 
@@ -18,7 +17,7 @@ describe("GridItem component tests", () => {
 
   test("renders with props", () => {
     useFetchPokemon.mockReturnValue({ pokemon: { name, url, id, img } });
-    const { container } = render(
+    render(
       <GridItem
         name={name}
         url={url}
@@ -26,7 +25,7 @@ describe("GridItem component tests", () => {
         setModalVisible={setModalVisible}
       />
     );
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText("#1")).toBeTruthy();
   });
 
   test('should set selected pokemon by user', () => {

@@ -34,7 +34,7 @@ export const fetchPokemons = async (name, page) => {
       return [];
     }
 
-    console.error(error);
+    // console.error(error);
     alert(error);
 
   }
