@@ -1,6 +1,6 @@
 import { StyleSheet, Button, Text, View } from "react-native";
 
-export const Paginator = ({ setSearchParam, page, name }) => {
+export const Paginator = ({ setSearchParam, page, name, pokemons }) => {
 
   const handlerPreviuous = () => {
     setSearchParam(({ page }) => ({ name: '', page: page - 1 }));
@@ -26,6 +26,7 @@ export const Paginator = ({ setSearchParam, page, name }) => {
         title="    Next ▶     "
         onPress={handlerNext}
         color="#3986CE"
+        disabled={pokemons.length < 20}
       />
     </View>
   )

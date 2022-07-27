@@ -17,10 +17,10 @@ export const Home = () => {
   return (
     <View style={homeStyles.container}>
       <Loading isLoading={isLoading} />
-      <TitleApp />
+      <TitleApp setSearchParam={setSearchParam}/>
       <SearchBar setSearchParam={setSearchParam} name={name}/>
       <Grid pokemons={pokemons}/>
-      <Paginator setSearchParam={setSearchParam} page={page} name={name}/>
+      <Paginator setSearchParam={setSearchParam} page={page} name={name} pokemons={pokemons}/>
     </View>
   )
 }

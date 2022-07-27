@@ -1,8 +1,8 @@
-import { StyleSheet, View, Text, Image } from "react-native"
+import { StyleSheet, View, Text, Image, Pressable } from "react-native"
 
-export const TitleApp = () => {
+export const TitleApp = ({setSearchParam}) => {
   return (
-    <View>
+    <Pressable onPress={() => setSearchParam({ name: '', page: 1 })}>
       <Image 
         source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/404px-International_Pok%C3%A9mon_logo.svg.png'}} 
         style={titleAppStyles.image}
@@ -14,7 +14,7 @@ export const TitleApp = () => {
           style={titleAppStyles.imageSubtitle}
         />
       </View>
-    </View>
+    </Pressable>
   )
 }
 
