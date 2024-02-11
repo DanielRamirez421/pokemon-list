@@ -2,12 +2,9 @@ import axios from "axios";
 import { initialPokemonState } from "../utils/utils";
 
 export const fetchPokemon = async (url, name) => {
-
   try {
-    
     const response = await axios.get(url);
     const data = response.data;
-
     return {
       name: name,
       img: data.sprites.front_default,
@@ -17,11 +14,8 @@ export const fetchPokemon = async (url, name) => {
       sprites: data.sprites,
       movements: data.moves.map(move => move.move.name),
     }
-
   } catch (error) {
-
     return initialPokemonState;
-    
   }
 
 };
